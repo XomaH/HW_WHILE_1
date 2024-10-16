@@ -93,6 +93,11 @@ public class Main {
             if (month % 6 == 0) {
                 System.out.println("В " + month + " месяц сумма вклада составляет " + total);
             }
+
+        }
+        // добавил вывод финальной сумму так как накопится 12млн не кратна 6 месяцам.
+        {
+            System.out.println("Общая сумма на вскладе равна " + total);
         }
 
         // Task 6
@@ -107,9 +112,9 @@ public class Main {
 
         // не уверен что необхода проверка на 12млн, но решил оставить. Что наступит быстрее. Из задания не ясно.
         // с одной стороны модифицировать программу и тогда проверка на сумму должна остаться
-        // while (month <= (9 * 12) - так будет если просто надо за 9 лет посчитать.
+        // while (total <= 12_000_000 || month <= (9 * 12) - так будет если просто надо за 9 лет посчитать и неболее 12млн.
 
-        while (total <= 12000000 || month <= (9 * 12)) {
+        while (month <= (9 * 12)) {
             percentInMonth = total / 100 * 7;
             total = total + percentInMonth;
             month++;
@@ -124,7 +129,26 @@ public class Main {
             System.out.println("Задание 7");
         }
 
+        int firstFridayInMonth = 3;
 
+        while (firstFridayInMonth <= 31) {
+
+            System.out.println("Сегодня пятница, " + firstFridayInMonth + " -е число. Необходимо подготовить отчет");
+            firstFridayInMonth += 7;
+        }
+
+// task 8
+
+        {
+            System.out.println("задание 8");
+        }
+
+        int yearNow = 2024;
+
+        for (int q = 1; q <= yearNow + 100; q++)
+
+            if (q % 79 == 0 && q > (yearNow - 200))
+                System.out.println(q);
 
 
     }
